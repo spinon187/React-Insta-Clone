@@ -1,0 +1,17 @@
+.comment p {
+    line-height: 2rem;
+    padding-left: .75rem;
+    padding-bottom: .5rem;
+}
+
+.comment span {
+    font-weight: bold;
+    padding-right: .5rem;
+}
+
+.add-comment {
+    width: 100%;
+    padding: .75rem;
+    border: none;
+    font-weight: bold;
+}

@@ -1,25 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import dummyData from './dummy-data';
+import PostContainer from './components/PostContainer/PostContainer';
+import SearchBar from './components/SearchBar/SearchBar';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      posts: []
+    }
+  }
+
+  componentDidMount(){
+    this.setState({posts: dummyData});
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <SearchBar />
+        <div>
+          {this.state.posts.map(post =>{
+            return (
+              <PostContainer post={post} />
+            )
+          })}
+        </div>
       </div>
     );
   }
