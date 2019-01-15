@@ -16,6 +16,22 @@ class App extends Component {
     this.setState({posts: dummyData});
   }
 
+  HandleChanges = e => {
+    this.setState({ [e.target.name]: e.target.value});
+  };
+
+  AddNewComment = e => {
+    e.preventDefault();
+    console.log('pow');
+    this.setState({
+      comments: [
+        ...this.state.posts.comments,
+        {username: 'Unregistered User', text: this.state.text}
+      ],
+      text: ''
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -23,7 +39,11 @@ class App extends Component {
         <div>
           {this.state.posts.map(post =>{
             return (
-              <PostContainer post={post} />
+              <PostContainer
+                post={post}
+                HandleChanges={this.HandleChanges}
+                AddNewComment={this.AddNewComment}
+              />
             )
           })}
         </div>
