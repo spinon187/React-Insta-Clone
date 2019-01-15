@@ -2,8 +2,9 @@
     display: flex;
     align-items: center;
     padding: 1rem;
+    justify-content: space-between;
+    wrap: nowrap;
 }
-
 
 
 .logo {
@@ -15,4 +16,15 @@
 .cursive {
     height: 3rem;
     padding-left: 1rem;
+}
+
+.search-icons i{
+    padding: 1rem;
+}
+
+.search-field {
+    width: 30%;
+    padding: .5rem 2rem;
+    padding-left: 12%;
+    border-radius: 5px;
 }
