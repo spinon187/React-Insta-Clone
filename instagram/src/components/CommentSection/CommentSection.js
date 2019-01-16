@@ -1,29 +1,67 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Comment from './Comment'
 import './CommentSection.css'
+// import dummyData from './dummy-data';
 
-const CommentSection = props => {
-    return (
-        <div>
-            {props.comments.map(comment =>{
-                return (
-                    <Comment
-                        comment = {comment}
+
+class CommentSection extends Component {
+    constructor(props){
+      super(props);
+      this.state = {
+        comments: props.comments,
+        text: ''
+        }
+    }
+
+    AddNewComment = e => {
+        e.preventDefault();
+        console.log('pow');
+        console.log(e.target);
+        // const comments = [
+        //   ...this.state.comments,
+        //   {username: 'Unregistered User', text: this.state.text}
+        // ];
+        // this.setState({
+        //   comments: comments
+        // });
+        this.setState({
+            comments: [
+              ...this.state.comments,
+              {username: 'Unregistered User', text: this.state.text}
+            ],
+            text: ''
+          });
+      };
+
+    HandleChanges = e => {
+        this.setState({ [e.target.name]: e.target.value});
+    };
+
+    render(){
+        return (
+            <div className='CommentSection'>
+                {this.state.comments.map(comment =>{
+                    return (
+                        <Comment
+                            comment = {comment}
+                        />
+                    )
+                })}
+                <form className='comment-field' onSubmit={this.AddNewComment}>{}
+                    <input
+                        value={this.state.text}
+                        // index={props.index}
+                        name='text'
+                        className='add-comment'
+                        type='text'
+                        placeholder='Add a comment...'
+                        onChange={this.HandleChanges}
                     />
-                )
-            })}
-            <form className='comment-field' onSubmit={props.AddNewComment}>{}
-                <input
-                    value = {props.comments.text} 
-                    className='add-comment'
-                    type='text'
-                    placeholder='Add a comment...'
-                    onChange = {props.HandleChanges}
-                />
-                <button type = 'submit'>Post Comment</button>
-            </form>
-        </div>
-    )
+                    <button type = 'submit'>Post Comment</button>
+                </form>
+            </div>
+        )
+    }
 }
 
 export default CommentSection;
