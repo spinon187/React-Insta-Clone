@@ -78,9 +78,9 @@ const SearchBar = props => {
                 <button type = 'submit'>Search</button>
             </form>
             <div className='search-icons'>
-                <i className="far fa-compass"></i>
-                <i className="far fa-heart"></i>
-                <i className="far fa-user"></i>
+                <i className="far fa-compass fa-lg"></i>
+                <i className="far fa-heart fa-lg"></i>
+                <i className="far fa-user fa-lg"></i>
             </div>
         </div>
     )

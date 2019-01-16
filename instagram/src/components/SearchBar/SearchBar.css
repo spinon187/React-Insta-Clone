@@ -22,9 +22,21 @@
     padding: 1rem;
 }
 
-.search-field {
-    width: 30%;
+.search-form {
+    width: 40%;
     padding: .5rem 2rem;
-    padding-left: 12%;
+    /* padding-left: 12%; */
     border-radius: 5px;
+    display: flex
+}
+
+.search-field {
+    padding: .5rem 2rem;
+    border-radius: 5px;
+    text-align: center;
+    width: 66%;
+}
+
+.search-form button {
+    width: 33%
 }

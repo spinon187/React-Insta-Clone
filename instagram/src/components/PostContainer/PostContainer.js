@@ -63,8 +63,8 @@ class PostContainer extends Component {
                 <img src={this.state.post.imageUrl} alt={this.state.post.username} />
                 <div className='text-content'>
                     <div className='social'>
-                        <i className="far fa-heart" onClick={this.DumbPlus}></i>
-                        <i className="far fa-comment"></i>
+                        <i className="far fa-heart fa-lg" onClick={this.DumbPlus}></i>
+                        <i className="far fa-comment fa-lg"></i>
                     <div className='like-total'>{this.state.likes} likes</div>
                     </div>
                     <CommentSection

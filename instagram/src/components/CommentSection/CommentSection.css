@@ -9,9 +9,19 @@
     padding-right: .5rem;
 }
 
-.add-comment {
+.comment-field {
     width: 100%;
+}
+
+.add-comment {
+    width: 80%;
     padding: .75rem;
     border: none;
     font-weight: bold;
+}
+
+.comment-field button {
+    width: 20%;
+    height: 100%;
+    padding: .75rem;
 }
