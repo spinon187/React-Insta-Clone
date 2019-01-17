@@ -1,0 +1,42 @@
+.search-bar{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+
+.logo {
+    height: 3rem;
+    padding-right: 1.5rem;
+    border-right: 2px solid gray;
+}
+
+.cursive {
+    height: 3rem;
+    padding-left: 1rem;
+}
+
+.search-icons i{
+    padding: 1rem;
+}
+
+.search-form {
+    width: 40%;
+    padding: .5rem 2rem;
+    /* padding-left: 12%; */
+    border-radius: 5px;
+    display: flex
+}
+
+.search-field {
+    padding: .5rem 2rem;
+    border-radius: 5px;
+    text-align: center;
+    width: 66%;
+}
+
+.search-form button {
+    width: 33%
+}
