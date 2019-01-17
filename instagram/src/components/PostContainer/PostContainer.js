@@ -11,19 +11,9 @@ class PostContainer extends Component {
             post: props.post,
             likes: props.post.likes,
             dumbUP: false,
-            comments: props.comments
+            comments: props.post.comments,
         }
     }
-
-    // PlusLikes = e => {
-    //     e.preventDefault();
-    //     this.setState({
-    //     posts: [
-    //         ...this.state.post,
-    //         {likes: this.state.likes + 1}
-    //     ]
-    //     });
-    // }
 
     DumbPlus = e => {
         e.preventDefault();
@@ -43,13 +33,6 @@ class PostContainer extends Component {
         console.log(this.state.likes)
 
     }
-
-    // let dumb = props.likes;
-    // const dumbPlus = function(){
-    //     dumb = dumb + 1;
-    //     console.log(dumb)
-    // };
-
 
     render(){
         return (

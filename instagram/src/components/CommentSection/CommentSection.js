@@ -17,17 +17,10 @@ class CommentSection extends Component {
         e.preventDefault();
         console.log('pow');
         console.log(e.target);
-        // const comments = [
-        //   ...this.state.comments,
-        //   {username: 'Unregistered User', text: this.state.text}
-        // ];
-        // this.setState({
-        //   comments: comments
-        // });
         this.setState({
             comments: [
               ...this.state.comments,
-              {username: 'Unregistered User', text: this.state.text}
+              {username: JSON.parse(window.localStorage.getItem('user')), text: this.state.text}
             ],
             text: ''
           });
