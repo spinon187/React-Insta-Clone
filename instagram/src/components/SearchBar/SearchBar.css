@@ -3,7 +3,7 @@
     align-items: center;
     padding: 1rem;
     justify-content: space-between;
-    wrap: nowrap;
+    flex-wrap: nowrap;
 }
 
 

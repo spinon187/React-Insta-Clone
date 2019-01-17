@@ -69,10 +69,7 @@ class App extends Component {
     })
   }
 
-  ClearLocal = e => {
-    e.preventDefault();
-    window.localStorage.removeItem('user')
-  }
+
 
   render(){
     // return (
