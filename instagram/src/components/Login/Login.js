@@ -1,6 +1,8 @@
 // import React from 'react';
 import React, { Component } from 'react';
 import './Login.css';
+import bwlogo from '../img/blackonwhite.png'
+import bwcam from '../img/bwicon.jpg'
 
 class Login extends Component {
     constructor(props){
@@ -31,25 +33,33 @@ class Login extends Component {
 
     render(){
         return (
-            <form className='Login' id={this.state.inactive} onSubmit={this.SetUser}>
-            <input
-                value={this.state.user}
-                className='user-entry-field'
-                name='user'
-                type='text'
-                placeholder='Enter Username'
-                onChange={this.HandleChanges}
-            />
-                <input
-                value={this.state.password}
-                className='pw-entry-field'
-                name='password'
-                type='password'
-                placeholder='Enter Password'
-                onChange={this.HandleChanges}
-            />
-            <button type='submit'>Log In</button>
-            </form>
+            <div className='login-overlay' id={this.state.inactive} >
+                <div className='login-box'>
+                    <img src={bwlogo} alt='Black and White Logo' className='bwcursive'/>
+                    <img src={bwcam} alt='Black and White Camera' className='bwcam'/>
+                <form className='Login' onSubmit={this.SetUser}>
+                    <input
+                        value={this.state.user}
+                        className='user-entry-field'
+                        name='user'
+                        type='text'
+                        placeholder='Username'
+                        onChange={this.HandleChanges}
+                        required
+                    />
+                    <input
+                        value={this.state.password}
+                        className='pw-entry-field'
+                        name='password'
+                        type='password'
+                        placeholder='Password'
+                        onChange={this.HandleChanges}
+                        required
+                    />
+                <button type='submit' className='login-button'>Log In</button>
+                </form>
+                </div>
+            </div>
         )
     }
 }
